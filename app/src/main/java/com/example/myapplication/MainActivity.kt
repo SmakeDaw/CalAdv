@@ -13,14 +13,14 @@ import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
-    var str:String = ""
-    var spinlock = 0
-    var numlock = 0
-    var num1 = 0
-    var num2 = 0
-    var operand = ""
-    var operand2 = ""
-    var operandlock = 2
+    var str:String = "" //mem value from show.test.toString()
+    var spinlock = 0 // 0 = allow assign dot, 1 = not allow assign dot
+    //var numlock = 0
+    var num1 = 0 //mem result calculate
+    var num2 = 0 //total result calculate
+    var operand = "" //operator for calculate
+    var operand2 = "" //operator real time
+    var operandlock = 2 // 1 = accept receive operator , 2 = not receive operator
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
                 show.setText(num2.toString())
             }
             spinlock = 0
-            numlock = 1
+            //numlock = 1
             num1 = 0
             operand = ""
             operand2 = ""
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         //Reset all Global Variable
         clear.setOnClickListener{
             spinlock = 0
-            numlock = 1
+            //numlock = 1
             num1 = 0
             num2 = 0
             operand = ""
@@ -220,10 +220,10 @@ class MainActivity : AppCompatActivity() {
         operandlock = 2
         num2 = num1
 
-
+    //function add number from button
     }fun numadd(ss:String){
         if(show.text.toString() == "0" || operandlock == 2){
-            numlock = 0
+            //numlock = 0
             operandlock = 1
             show.setText(ss)
         }else{
