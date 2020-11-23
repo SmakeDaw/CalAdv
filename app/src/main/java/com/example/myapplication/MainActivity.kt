@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Assign number from number button
         zero.setOnClickListener{
 //            if(show.text.toString() == "0" || operandlock == 2){
 //                numlock = 0
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             numadd("9")
         }
 
+        //Assign operator from button
         plus.setOnClickListener{
             if(operand == "")
                 operand = "+"
@@ -110,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             prcess()
         }
 
+        //insert . from button
         dot.setOnClickListener{
             if(spinlock == 0){
                 str = show.text.toString().plus(".")
@@ -118,8 +121,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //Calculating final Result
         result.setOnClickListener{
-
             if(operandlock != 2){
                 if(operand == "+"){
                     num2 = num1 + show.text.toString().toInt()
@@ -155,6 +158,8 @@ class MainActivity : AppCompatActivity() {
             operand2 = ""
             operandlock = 2
         }
+
+        //Reset all Global Variable
         clear.setOnClickListener{
             spinlock = 0
             numlock = 1
@@ -165,6 +170,8 @@ class MainActivity : AppCompatActivity() {
             operandlock = 2
             show.setText("0")
         }
+
+        // Delete 1 index number from last index
         dell.setOnClickListener{
             if(show.text.toString().length == 1){
                 show.setText("0")
@@ -172,6 +179,8 @@ class MainActivity : AppCompatActivity() {
                 show.setText(show.text.toString().dropLast(1))
             }
         }
+
+        //Assign modulo from button
         percent.setOnClickListener{
             if(operand == "")
                 operand = "%"
@@ -180,6 +189,8 @@ class MainActivity : AppCompatActivity() {
             prcess()
         }
     }
+
+    //function calculate and assign operator
     fun prcess(){
         if(operand2 != ""){
             if(operand == "+" && operandlock == 1){
@@ -203,11 +214,12 @@ class MainActivity : AppCompatActivity() {
             }
             operand = operand2
         } else if (num1 == 0){
-                num1 = show.text.toString().toInt()
+                num1 = show.text.toString().toInt()//insert num1 fron textbox if num1 = 0
         }
         show.setText(num1.toString())
         operandlock = 2
         num2 = num1
+
 
     }fun numadd(ss:String){
         if(show.text.toString() == "0" || operandlock == 2){
