@@ -21,9 +21,33 @@ class MainActivity : AppCompatActivity() {
     var operand = "" //operator for calculate
     var operand2 = "" //operator real time
     var operandlock = 2 // 1 = accept receive operator , 2 = not receive operator
+
+    lateinit var show: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val zero: Button = findViewById(R.id.zero)
+        val one: Button = findViewById(R.id.one)
+        val two: Button = findViewById(R.id.two)
+        val three: Button = findViewById(R.id.three)
+        val four: Button = findViewById(R.id.four)
+        val five: Button = findViewById(R.id.five)
+        val six: Button = findViewById(R.id.six)
+        val seven: Button = findViewById(R.id.seven)
+        val eight: Button = findViewById(R.id.eight)
+        val nine: Button = findViewById(R.id.nine)
+        val plus: Button = findViewById(R.id.plus)
+        val minus: Button = findViewById(R.id.minus)
+        val power: Button = findViewById(R.id.power)
+        val divide: Button = findViewById(R.id.divide)
+        val dot: Button = findViewById(R.id.dot)
+        val result: Button = findViewById(R.id.result)
+        val clear: Button = findViewById(R.id.clear)
+        val dell: Button = findViewById(R.id.dell)
+        val percent: Button = findViewById(R.id.percent)
+        show = findViewById(R.id.show)
 
         //Assign number from number button
         zero.setOnClickListener{
@@ -214,13 +238,13 @@ class MainActivity : AppCompatActivity() {
             }
             operand = operand2
         } else if (num1 == 0){
-                num1 = show.text.toString().toInt()//insert num1 fron textbox if num1 = 0
+            num1 = show.text.toString().toInt()//insert num1 fron textbox if num1 = 0
         }
         show.setText(num1.toString())
         operandlock = 2
         num2 = num1
 
-    //function add number from button
+        //function add number from button
     }fun numadd(ss:String){
         if(show.text.toString() == "0" || operandlock == 2){
             //numlock = 0
