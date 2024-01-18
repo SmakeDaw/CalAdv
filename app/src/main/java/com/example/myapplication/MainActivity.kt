@@ -1,15 +1,9 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.StringBuilder
-import kotlin.system.exitProcess
-
+import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,14 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         //Assign number from number button
         zero.setOnClickListener{
-//            if(show.text.toString() == "0" || operandlock == 2){
-//                numlock = 0
-//                operandlock = 1
-//                show.setText("0")
-//            }else{
-//                str = show.text.toString().plus("0")
-//                show.setText(str)
-//            }
             numadd("0")
         }
 
@@ -77,18 +63,23 @@ class MainActivity : AppCompatActivity() {
         four.setOnClickListener{
             numadd("4")
         }
+        
         five.setOnClickListener{
             numadd("5")
         }
+        
         six.setOnClickListener{
             numadd("6")
         }
+        
         seven.setOnClickListener{
             numadd("7")
         }
+        
         eight.setOnClickListener{
             numadd("8")
         }
+        
         nine.setOnClickListener{
             numadd("9")
         }
@@ -100,18 +91,8 @@ class MainActivity : AppCompatActivity() {
             else
                 operand2 = "+"
             prcess()
-//            if(num1 == 0 ) {
-//                num1 = show.text.toString().toInt()
-//                //num2 = show.text.toString().toInt()
-//                operandlock = 2
-//            } else if(operandlock == 1){
-//                num1 = num1 + show.text.toString().toInt()
-//                show.setText(num1.toString())
-//                operandlock = 2
-//                num2 = 1
-//
-//            }
         }
+        
         minus.setOnClickListener{
             if(operand == "")
                 operand = "-"
